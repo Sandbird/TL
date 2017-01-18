@@ -13,6 +13,27 @@
 /*
  * Component: Control sidebar. By default, this is the right sidebar.
  */
+
+.control-sidebar {
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* General Links */
+.control-sidebar a {
+  color: #3c8dbc;
+}
+.control-sidebar a:hover,
+.control-sidebar a:active,
+.control-sidebar a:focus {
+  outline: none;
+  text-decoration: none;
+  color: #72afd2;
+}
+
+
 .control-sidebar-bg {
   position: fixed;
   z-index: 1000;
@@ -29,12 +50,12 @@
 }
 .control-sidebar {
   position: absolute;
-  padding-top: 50px;
+  padding-top: 120px;
   z-index: 1010;
 }
 @media (max-width: 768px) {
   .control-sidebar {
-    padding-top: 100px;
+    padding-top: 130px;
   }
 }
 .control-sidebar > .tab-content {
