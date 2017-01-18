@@ -55,9 +55,6 @@ $.AdminLTE.options = {
   sidebarExpandOnHover: false,
   //BoxRefresh Plugin
   enableBoxRefresh: true,
-  //Bootstrap.js tooltip
-  enableBSToppltip: true,
-  BSTooltipSelector: "[data-toggle='tooltip']",
   //Enable Fast Click. Fastclick.js creates a more
   //native touch experience with touch devices. If you
   //choose to enable the plugin, make sure you load the script
@@ -74,33 +71,6 @@ $.AdminLTE.options = {
     selector: ".control-sidebar",
     //Enable slide over content
     slide: true
-  },
-  //Box Widget Plugin. Enable this plugin
-  //to allow boxes to be collapsed and/or removed
-  enableBoxWidget: true,
-  //Box Widget plugin options
-  boxWidgetOptions: {
-    boxWidgetIcons: {
-      //Collapse icon
-      collapse: 'fa-minus',
-      //Open icon
-      open: 'fa-plus',
-      //Remove icon
-      remove: 'fa-times'
-    },
-    boxWidgetSelectors: {
-      //Remove button selector
-      remove: '[data-widget="remove"]',
-      //Collapse button selector
-      collapse: '[data-widget="collapse"]'
-    }
-  },
-  //Direct Chat plugin options
-  directChat: {
-    //Enable direct chat by default
-    enable: true,
-    //The button to open and close the chat contacts pane
-    contactToggleSelector: '[data-widget="chat-pane-toggle"]'
   },
   //Define the set of colors to use globally around the website
   colors: {
@@ -184,7 +154,6 @@ $(function () {
   if (o.sidebarPushMenu) {
     $.AdminLTE.pushMenu.activate(o.sidebarToggleSelector);
   }
-
 
   //Activate fast click
   if (o.enableFastclick && typeof FastClick != 'undefined') {
@@ -518,6 +487,7 @@ function _init() {
     }
   };
 
+}
 
 /* ------------------
  * - Custom Plugins -
@@ -603,33 +573,4 @@ function _init() {
 
 })(jQuery);
 
-/*
- * EXPLICIT BOX CONTROLS
- * -----------------------
- * This is a custom plugin to use with the component BOX. It allows you to activate
- * a box inserted in the DOM after the app.js was loaded, toggle and remove box.
- *
- * @type plugin
- * @usage $("#box-widget").activateBox();
- * @usage $("#box-widget").toggleBox();
- * @usage $("#box-widget").removeBox();
- */
-(function ($) {
 
-  'use strict';
-
-  $.fn.activateBox = function () {
-    $.AdminLTE.boxWidget.activate(this);
-  };
-
-  $.fn.toggleBox = function () {
-    var button = $($.AdminLTE.boxWidget.selectors.collapse, this);
-    $.AdminLTE.boxWidget.collapse(button);
-  };
-
-  $.fn.removeBox = function () {
-    var button = $($.AdminLTE.boxWidget.selectors.remove, this);
-    $.AdminLTE.boxWidget.remove(button);
-  };
-
-})(jQuery);
