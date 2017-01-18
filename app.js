@@ -126,7 +126,7 @@ $(function () {
   var o = $.AdminLTE.options;
 
   //Set up the object
-  _init();
+ // _init();
 
   //Activate the layout maker
   $.AdminLTE.layout.activate();
