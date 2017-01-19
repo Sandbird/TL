@@ -13,7 +13,14 @@
 /*
  * Component: Control sidebar. By default, this is the right sidebar.
  */
-
+html,
+body {
+  height: 100%;
+}
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 .control-sidebar {
   font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
